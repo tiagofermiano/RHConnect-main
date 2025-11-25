@@ -1,4 +1,4 @@
-const apiBase = "";
+const apiBase = "https://rhconnect-main.onrender.com";
 
 function setText(el, text) {
   el.textContent = text;
