@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RHConnectCV - Vagas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header igual ao do app -->
+    <header id="appHeader" class="app-header">
+      <div class="app-header-brand">
+        <img src="logo.png" alt="RHConnectCV" class="header-logo" />
+        <span class="header-title">RHConnectCV · Sistema de Vagas</span>
+      </div>
+
+      <div class="app-header-actions">
+        <button
+          class="header-action"
+          onclick="window.location.href='index.html'"
+        >
+          Voltar ao painel
+        </button>
+
+        <div class="user-menu">
+          <button
+            class="user-menu-toggle"
+            id="btnUserMenu"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            CV
+          </button>
+          <div
+            class="user-menu-dropdown hidden"
+            id="userMenuDropdown"
+            aria-label="Menu do usuário"
+          >
+            <button id="btnIrPerfil" class="user-menu-item">
+              Editar perfil
+            </button>
+            <button
+              id="btnHeaderLogout"
+              class="user-menu-item user-menu-item-danger"
+            >
+              Sair
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="card card-main" id="secVagas">
+        <div class="dashboard-main-header">
+          <h2>Vagas abertas</h2>
+        </div>
+        <p class="card-intro">
+          Escolha uma vaga e envie um currículo que você já cadastrou no
+          sistema RHConnectCV.
+        </p>
+
+        <div class="vagas-layout">
+          <!-- Lista de vagas fixas -->
+          <div class="vagas-list">
+            <button class="vaga-card" data-vaga="dev-python-jr">
+              <h3>Desenvolvedor(a) Python Jr</h3>
+              <p>TechFlow Analytics · Joinville/SC</p>
+              <span>Híbrido · CLT · Júnior</span>
+            </button>
+
+            <button class="vaga-card" data-vaga="analista-dados-pl">
+              <h3>Analista de Dados Pleno</h3>
+              <p>InsightPlus BI · São Paulo/SP</p>
+              <span>Remoto · PJ · Pleno</span>
+            </button>
+          </div>
+
+          <!-- Detalhes da vaga selecionada + envio de currículo -->
+          <div class="vaga-detalhes" id="vagaDetalhes">
+            <p class="card-intro">
+              Selecione uma vaga na lista ao lado para ver os detalhes e enviar
+              um currículo cadastrado.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

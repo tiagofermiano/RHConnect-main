@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>RHConnectCV - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- TELA DE LOGIN -->
+  <section id="view-auth" class="auth-screen auth-screen-login">
+    <div class="auth-shell">
+      <!-- LADO ESQUERDO: LOGO + DESCRIÇÃO -->
+      <div class="auth-pane auth-pane-info">
+        <div class="auth-info-inner">
+          <img src="logo.png" alt="RHConnectCV" class="auth-logo" />
+
+          <h2 class="auth-system-title">RHConnectCV</h2>
+          <p class="auth-system-text">
+            Sistema de cadastro e gestão de currículos com foco em
+            privacidade e consentimento.
+          </p>
+        </div>
+      </div>
+
+      <!-- LADO DIREITO: LOGIN -->
+      <div class="auth-pane auth-pane-form">
+        <div class="auth-form-inner">
+          <h2 class="auth-title-main">Bem-vindo de volta</h2>
+          <p class="auth-subtitle">
+            Acesse com seu e-mail e senha para gerenciar seus currículos.
+          </p>
+
+          <form id="formLogin" class="auth-form">
+            <div class="field-group">
+              <label for="loginEmail">E-mail</label>
+              <input type="email" id="loginEmail" required />
+            </div>
+
+            <div class="field-group">
+              <label for="loginSenha">Senha</label>
+              <input type="password" id="loginSenha" required />
+            </div>
+
+            <p id="erroLogin" class="error-message" hidden></p>
+
+            <button type="submit" class="btn-main">
+              Entrar
+            </button>
+          </form>
+
+          <p class="auth-alt-link">
+            não tem conta?
+            <a href="cadastro.html">Cadastre agora</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEADER DO APP (SÓ LOGADO) -->
+<header id="appHeader" class="app-header">
+  <div class="app-header-brand">
+    <img src="logo.png" alt="RHConnectCV" class="header-logo" />
+    <span class="header-title">RHConnectCV · Sistema de Vagas</span>
+  </div>
+
+  <div class="app-header-actions">
+    <!-- novo botão de vagas -->
+    <button
+      class="header-action"
+      onclick="window.location.href='vagas.html'"
+    >
+      Ver vagas
+    </button>
+
+
+    <!-- menu do usuário -->
+    <div class="user-menu">
+      <button
+        id="btnUserMenu"
+        class="user-menu-toggle"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        CV
+      </button>
+      <div
+        id="userMenuDropdown"
+        class="user-menu-dropdown hidden"
+        aria-label="Menu do usuário"
+      >
+        <button id="btnIrPerfil" class="user-menu-item">
+          Editar perfil
+        </button>
+        <button
+          id="btnHeaderLogout"
+          class="user-menu-item user-menu-item-danger"
+        >
+          Sair
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- DASHBOARD (SÓ LOGADO) -->
+  <main id="view-dashboard" class="hidden">
+    <section class="dashboard">
+      <!-- Lista de currículos -->
+      <article class="card card-main">
+        <div class="dashboard-main-header">
+          <h2>Meus currículos</h2>
+          <button id="btnNovoCurriculo" class="primary-btn">
+            Novo currículo
+          </button>
+        </div>
+        <p class="card-intro">
+          Acompanhe os currículos que você já cadastrou no sistema RHConnectCV.
+        </p>
+        <div id="listaCurriculos" class="curriculos-list"></div>
+      </article>
+
+      <!-- Novo currículo -->
+      <article class="card">
+        <h3>Cadastrar novo currículo</h3>
+        <p class="card-intro">
+          Preencha as informações abaixo e envie o arquivo do seu currículo.
+        </p>
+
+        <form id="formCurriculo" class="auth-form">
+          <div class="field-group">
+            <label for="curVaga">Vaga ou cargo de interesse</label>
+            <input
+              type="text"
+              id="curVaga"
+              required
+              placeholder="Ex.: Desenvolvedor Backend, Analista Administrativo..."
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="curArea">Área profissional</label>
+            <input
+              type="text"
+              id="curArea"
+              placeholder="Ex.: Tecnologia, Administrativo, Comercial..."
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="curNivel">Nível de senioridade</label>
+            <input
+              type="text"
+              id="curNivel"
+              placeholder="Ex.: Estágio, Júnior, Pleno, Sênior..."
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="curPretensao">Pretensão salarial (opcional)</label>
+            <input
+              type="text"
+              id="curPretensao"
+              placeholder="Ex.: R$ 3.000,00"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="curArquivo">Arquivo do currículo</label>
+            <input
+              type="file"
+              id="curArquivo"
+              accept=".pdf,.doc,.docx,.odt,.rtf,.txt,image/*"
+              required
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="curObs">Observações (opcional)</label>
+            <input
+              type="text"
+              id="curObs"
+              placeholder="Destaques, disponibilidade, idiomas, etc."
+            />
+          </div>
+
+          <div class="consent-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="curConsentimento" />
+              <span class="checkmark"></span>
+              <span>
+                Autorizo o uso dos dados deste currículo para fins de recrutamento,
+                conforme a
+                <a href="privacidade.html" target="_blank" class="inline-link">
+                  Política de Privacidade
+                </a>.
+              </span>
+            </label>
+          </div>
+
+          <p id="erroCurriculo" class="error-message" hidden></p>
+          <p id="msgCurriculo" class="success-message" hidden>
+            Currículo cadastrado com sucesso.
+          </p>
+
+          <button type="submit" class="btn-main">
+            Cadastrar currículo
+          </button>
+        </form>
+      </article>
+    </section>
+
+    <!-- Barra de cookies/termos -->
+    <div id="cookieBar" class="cookie-bar hidden">
+      <p>
+        Clicando em "Aceitar", você concorda com o armazenamento de cookies no
+        seu dispositivo para melhorar a experiência e navegação no site.
+      </p>
+      <div class="cookie-actions">
+        <button id="btnCookieGerenciar" class="secondary-btn">Gerenciar</button>
+        <button id="btnCookieAceitar" class="primary-btn">Aceitar</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span>
+        RHConnectCV · Sistema acadêmico de demonstração ·
+        <a href="privacidade.html" target="_blank">Política de Privacidade</a>
+      </span>
+    </footer>
+  </main>
+
+  <div id="cookieFlash" class="cookie-flash hidden">
+  <p>🍪 Este site usa cookies para melhorar sua experiência.<br>
+  <strong>Clique em qualquer lugar para continuar.</strong></p>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

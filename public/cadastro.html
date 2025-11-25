@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>RHConnectCV - Criar conta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section id="view-auth" class="auth-screen auth-screen-register">
+    <div class="auth-shell">
+      <!-- LADO ESQUERDO: FORMULÁRIO DE CADASTRO -->
+      <div class="auth-pane auth-pane-form">
+        <div class="auth-form-inner">
+          <h2 class="auth-title-main">Criar conta</h2>
+          <p class="auth-subtitle">
+            Cadastre-se para salvar seus currículos e atualizá-los quando precisar.
+          </p>
+
+          <form id="formRegister" class="auth-form">
+            <div class="field-group">
+              <label for="regNome">Nome completo</label>
+              <input type="text" id="regNome" required />
+            </div>
+
+            <div class="field-group">
+              <label for="regEmail">E-mail</label>
+              <input type="email" id="regEmail" required />
+            </div>
+
+            <div class="field-group">
+              <label for="regTelefone">Telefone</label>
+              <input type="tel" id="regTelefone" required />
+            </div>
+
+            <div class="field-group">
+              <label for="regSenha">Senha</label>
+              <input type="password" id="regSenha" minlength="6" required />
+            </div>
+
+            <div class="consent-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="regConsentimento" />
+                <span class="checkmark"></span>
+                <span>
+                  <a href="privacidade.html" target="_blank" class="inline-link">Li e aceito</a>
+                  a Política de Privacidade e o uso dos meus dados para fins de cadastro e autenticação.
+                </span>
+              </label>
+            </div>
+
+            <p id="erroRegister" class="error-message" hidden></p>
+
+            <button type="submit" class="btn-main">
+              Criar conta
+            </button>
+          </form>
+
+          <p class="auth-alt-link">
+            já tem conta?
+            <a href="index.html">Entrar</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- LADO DIREITO: LOGO + DESCRIÇÃO -->
+      <div class="auth-pane auth-pane-info">
+        <div class="auth-info-inner">
+          <img src="logo.png" alt="RHConnectCV" class="auth-logo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="cadastro.js"></script>
+</body>
+</html>

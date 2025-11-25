@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>RHConnectCV - Meu perfil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header igual ao do app -->
+  <header id="appHeader" class="app-header">
+    <div class="app-header-brand">
+      <img src="logo.png" alt="RHConnectCV" class="header-logo" />
+      <span class="header-title">RHConnectCV · Sistema de Vagas</span>
+    </div>
+    <div class="app-header-actions">
+      <button class="header-action" onclick="window.location.href='index.html'">
+        Voltar ao painel
+      </button>
+      <div class="user-menu">
+        <button
+          class="user-menu-toggle"
+          id="btnUserMenu"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <span class="user-avatar-circle">CV</span>
+        </button>
+        <div class="user-menu-dropdown hidden" id="userMenuDropdown">
+          <button id="btnIrPerfil" class="user-menu-item">
+            Editar perfil
+          </button>
+          <button id="btnHeaderLogout" class="user-menu-item user-menu-item-danger">
+            Sair
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <article class="card card-main">
+      <h2>Meu perfil</h2>
+      <p class="card-intro">
+        Atualize seus dados pessoais utilizados para contato em processos seletivos.
+      </p>
+
+      <form id="formPerfil" class="auth-form">
+        <div class="field-group">
+          <label for="perfilNome">Nome completo</label>
+          <input type="text" id="perfilNome" required />
+        </div>
+
+        <div class="field-group">
+          <label for="perfilEmail">E-mail</label>
+          <input type="email" id="perfilEmail" disabled />
+        </div>
+
+        <div class="field-group">
+          <label for="perfilTelefone">Telefone</label>
+          <input type="tel" id="perfilTelefone" />
+        </div>
+
+        <p id="msgPerfil" class="success-message" hidden>
+          Perfil atualizado com sucesso.
+        </p>
+
+        <button type="submit" class="btn-main">
+          Salvar alterações
+        </button>
+      </form>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <span>
+      RHConnectCV · Sistema acadêmico de demonstração ·
+      <a href="privacidade.html" target="_blank">Política de Privacidade</a>
+    </span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
